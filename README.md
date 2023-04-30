@@ -1,0 +1,1 @@
+In this project I am creating my first fullstack Python Application! I am using HTML for my front end while also incorporating Jinja syntax within that HTML to give the page functionality, while using a SQL Database to hold in the users of the page. I use Flask to tie in all of the parts of this assignment and use a main python server to route everything within my web app.

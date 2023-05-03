@@ -39,7 +39,7 @@ def show(id):
 @app.route('/user/update', methods=['POST'])
 def update():
     User.update(request.form)
-    return redirect('/users')
+    return redirect(f"/user/show/{request.form['id']}")
 
 @app.route('/user/deleteuser/<int:id>')
 def deleteuser(id):

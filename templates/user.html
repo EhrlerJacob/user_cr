@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+    <h1 class="text-center">Member Profile</h1>
+    <input type="hidden" value="{{user.id}}">
+    <table
+      class="table table-dark table-hover table-striped mx-auto"
+      style="color: peachpuff"
+    >
+    <thead class="table-dark">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Creation Date</th>
+          <th>Updated</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at.strftime("%b %d %Y")}}</td>
+            <td>{{user.updated_at.strftime("%b %d %Y")}}</td>
+        </tr>
+    </tbody>
+    </table>
+    <form action="/user/edit/{{user.id}}">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="margin-top: 5px; background-color: goldenrod"
+      >
+        Edit Profile
+      </button>
+    </form>
+</body>
+</html>

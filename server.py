@@ -22,6 +22,33 @@ def create():
     User.save(request.form)
     return redirect('/users')
 
+@app.route('/user/edit/<int:id>')
+def edit(id):
+    data = {
+        "id":id
+    }
+    return render_template("edit.html",user=User.get_user(data))
+
+@app.route('/user/show/<int:id>')
+def show(id):
+    data = {
+        "id":id
+    }
+    return render_template("user.html",user=User.get_user(data))
+
+@app.route('/user/update', methods=['POST'])
+def update():
+    User.update(request.form)
+    return redirect('/users')
+
+@app.route('/user/deleteuser/<int:id>')
+def deleteuser(id):
+    data = {
+        "id": id
+    }
+    User.deleteuser(data)
+    return redirect('/users')
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
